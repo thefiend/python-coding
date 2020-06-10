@@ -15,6 +15,22 @@ def twoSum(self, nums, target):
             return [i, map[diff]]
 ```
 
+### 20. Valid Parentheses
+https://leetcode.com/problems/valid-parentheses/
+```
+def isValid(self, s):
+    ans=[];map={'{':'}','[':']','(':')'}
+    for char in s:
+        if char in map:
+            ans.append(map[char])
+        else:
+            if len(ans) > 0 and ans[-1] == char:
+                ans.pop(-1)
+            else:
+                return False
+    return len(ans) == 0
+```
+
 ### 387. First Unique Character in a String
 https://leetcode.com/problems/first-unique-character-in-a-string/
 ```
