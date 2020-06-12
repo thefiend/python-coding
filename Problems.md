@@ -35,6 +35,29 @@ def isValid(self, s):
     return len(ans) == 0
 ```
 
+### 92. Reverse Linked List II
+
+https://leetcode.com/problems/reverse-linked-list-ii/
+
+```
+def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
+    nums=[]
+    while head:
+        nums.append(head.val)
+        head = head.next
+    # reverse the array from m to n
+    nums[m-1:n] = list(reversed(nums[m-1:n]))
+
+    # make our new node
+    temphead = head = ListNode(nums[0])
+
+    #construct our ll
+    for i in range(1, len(nums)):
+        head.next = ListNode(nums[i])
+        head = head.next
+    return temphead
+```
+
 ### 121. Best Time to Buy and Sell Stock
 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
