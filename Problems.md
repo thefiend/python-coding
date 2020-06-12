@@ -236,6 +236,5 @@ https://leetcode.com/problems/kth-largest-element-in-an-array/
 
 ```
 def findKthLargest(self, nums, k):
-    nums.sort()
-    return nums[len(nums)-k:][0]
+    return sorted(nums)[len(nums)-k:][0]
 ```
